@@ -1,0 +1,42 @@
+# Contributor: Your Name <youremail@domain.com>
+pkgname=pytvshows-plus-svn
+pkgver=15
+pkgrel=1
+pkgdesc=""
+arch=('i686' 'x86_64')
+url="http://code.google.com/p/pytvshows-plus/"
+license=('GPL')
+groups=()
+depends=('python' '') 
+makedepends=('subversion')
+provides=()
+conflicts=('pytshows-plus')
+replaces=()
+backup=()
+options=()
+install=
+source=()
+noextract=()
+md5sums=() 
+
+_svntrunk=http://pytvshows-plus.googlecode.com/svn/trunk/
+_svnmod=pytvshows-plus-read-only
+
+build() {
+  cd "$srcdir"
+
+  if [ -d $_svnmod/.svn ]; then
+    (cd $_svnmod && svn up -r $pkgver)
+  else
+    svn co $_svntrunk --config-dir ./ -r $pkgver $_svnmod
+  fi
+
+  msg "SVN checkout done or server timeout"
+  msg "Starting make..."
+
+  rm -rf "$srcdir/$_svnmod-build"
+  cp -r "$srcdir/$_svnmod" "$srcdir/$_svnmod-build"
+  cd "$srcdir/$_svnmod-build"
+  
+  python setup.py install --root $pkgdir --optimize=1
+}

@@ -1,22 +1,17 @@
-# Contributor: Your Name <youremail@domain.com>
+# Contributor: Florian Besser <fbesser@gmail.com>
 pkgname=pytvshows-plus-svn
 pkgver=15
 pkgrel=1
-pkgdesc=""
+pkgdesc="This is maintenance fork of the original pytvshows script by Ben Firshman."
 arch=('i686' 'x86_64')
 url="http://code.google.com/p/pytvshows-plus/"
 license=('GPL')
-groups=()
-depends=('python' '') 
+depends=('python' 'python-feedparser') 
 makedepends=('subversion')
-provides=()
+provides=('pytvshows-plus')
 conflicts=('pytshows-plus')
-replaces=()
-backup=()
-options=()
 install=
 source=()
-noextract=()
 md5sums=() 
 
 _svntrunk=http://pytvshows-plus.googlecode.com/svn/trunk/

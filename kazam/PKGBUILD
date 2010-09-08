@@ -8,6 +8,7 @@ url="https://launchpad.net/kazam"
 license=('GPL')
 groups=()
 depends=('pycairo' 'pygtk' 'ffmpeg' 'pyxdg' 'python-xlib' 'libmatroska' 'gnome-python-desktop')
+optdepends=('python-pycurl: Youtube upload' 'python-gdata: Not known' 'libtheora: Video Codec')
 makedepends=('bzr' 'python-distutils-extra')
 
 install=

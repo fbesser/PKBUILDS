@@ -1,14 +1,13 @@
 # Contributor: Florian Besser <fbesser AT gmail DOT com>
 pkgname=kazam-bzr
-pkgver=62
+pkgver=67
 pkgrel=1
 pkgdesc="A screencasting program with design in mind"
 arch=('i686' 'x86_64')
 url="https://launchpad.net/kazam"
 license=('GPL')
 groups=()
-depends=('pycairo' 'pygtk' 'ffmpeg' 'pyxdg' 'python-xlib' 'libmatroska' 'gnome-python-desktop')
-optdepends=('python-pycurl: Youtube upload' 'python-gdata: Not known' 'libtheora: Video Codec')
+depends=('pycairo' 'pygtk' 'ffmpeg' 'pyxdg' 'python-xlib' 'libmatroska' 'gnome-python-desktop' 'python-pycurl' 'python-gdata' 'libtheora')
 makedepends=('bzr' 'python-distutils-extra')
 
 install=
